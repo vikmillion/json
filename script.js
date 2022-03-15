@@ -15,13 +15,14 @@ const renderTodos = (todos) => {
   const todo = document.createElement("div");
   outValue.innerText = "";
   if (todos.id > 0 || todos.id < 200) {
-    if (!todos.completed === false) {
-      delete todos.completed;
-      todos.state = "completed";
-    } else {
-      delete todos.completed;
-      todos.state = "in progress";
-    }
+    // if (!todos.completed === false) {
+    //   delete todos.completed;
+    //   todos.state = "completed";
+    // } else {
+    //   delete todos.completed;
+    //   todos.state = "in progress";
+    // }
+      todos.state = todos.completed === false ? "completed" : "in progress";
   } else {
     return (outValue.innerHTML = "Error<br/>Number 1 - 200  only");
   }
